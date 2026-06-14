@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.161",
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "serverless-esbuild": "^1.57.2",
     "serverless-offline": "^14.7.1",
@@ -21,6 +22,7 @@
     "@aws-sdk/client-dynamodb": "^3.1062.0",
     "@aws-sdk/lib-dynamodb": "^3.1062.0",
     "aws-lambda": "^1.0.7",
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "serverless": "^4.37.0",
     "serverless-http": "^4.0.0"
