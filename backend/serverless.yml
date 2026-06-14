@@ -1,0 +1,51 @@
+org: personaluseihavenocompany
+app: library-app
+service: library-api
+
+provider:
+  name: aws
+  runtime: nodejs22.x
+  region: us-east-1
+  stage: dev
+
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+            - dynamodb:Scan
+            - dynamodb:Query
+          Resource:
+            - arn:aws:dynamodb:us-east-1:602878949329:table/Livros
+            - arn:aws:dynamodb:us-east-1:602878949329:table/Clientes
+
+  environment:
+    BOOKS_TABLE: Livros
+    CUSTOMERS_TABLE: Clientes
+
+functions:
+  api:
+    handler: src/4-framework/handler.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /{proxy+}
+          method: any
+
+plugins:
+  - serverless-offline
+
+custom:
+  esbuild:
+    bundle: true
+    minify: false
+    sourcemap: true
+    exclude:
+      - aws-sdk
+    target: node22
+    platform: node
+    concurrency: 10
