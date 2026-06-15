@@ -1,8 +1,8 @@
-# 📚 Library Application
+# 📚 Library App
 
 Sistema de gerenciamento de biblioteca desenvolvido com **React, TypeScript, AWS Lambda e DynamoDB**.
 
-O **Library Application** é um projeto desenvolvido com o objetivo de realizar o gerenciamento de uma biblioteca, permitindo o cadastro e controle de livros e clientes.
+O **Library App** é um projeto desenvolvido com o objetivo de realizar o gerenciamento de uma biblioteca, permitindo o cadastro e controle de livros e clientes.
 
 A aplicação foi construída utilizando uma arquitetura em camadas baseada em princípios da **Clean Architecture**, com backend serverless hospedado na AWS e interface web desenvolvida em React.
 
